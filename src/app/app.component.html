@@ -1,0 +1,34 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<nav class="navbar navbar-light" style="background-color: #C0C0C0; height: 50px;">
+ 
+ 
+<ng-sidebar-container>
+
+    <ng-sidebar [opened]=opened>
+        <!--Sidebar-->
+        <button (click)="toggleSidebar()" >Close</button>
+   
+        <ul class="menu">
+            
+            <li><a routerLink="/" (click)="toggleSidebar()" >Dashboard</a></li>
+            <li><a routerLink="/createForm" (click)="toggleSidebar()">Create User</a></li>
+            <li><a routerLink="/listUsers" (click)="toggleSidebar()">List Users</a></li>
+        </ul>
+ 
+    </ng-sidebar>
+    
+    <div ng-sidebar-content>
+        <!--page header-->
+        <button (click)="toggleSidebar()" class="btn">
+            <i class="fa fa-bars"></i>
+            Menu    
+        </button>
+        
+        <!--page body-->
+        <div class="container">
+        <router-outlet></router-outlet>
+    </div>
+    </div>
+
+</ng-sidebar-container>
+</nav>
